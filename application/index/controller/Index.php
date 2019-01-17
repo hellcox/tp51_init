@@ -13,7 +13,7 @@ class Index extends Controller
 {
     public function index()
     {
-        echo '/index/index/index';
+        return $this->fetch();
     }
 
     public function hello($name = 'ThinkPHP5')
@@ -112,7 +112,8 @@ class Index extends Controller
     /**
      * @route('view')
      */
-    public function view(){
+    public function view()
+    {
         return $this->fetch('test');
     }
 
@@ -121,7 +122,7 @@ class Index extends Controller
      */
     public function page()
     {
-        $list = User::where("age",20)->paginate(10,false);
+        $list = User::where("age", 20)->paginate(10, false);
         $page = $list->render();
 
         $this->assign('list', $list);
@@ -132,7 +133,16 @@ class Index extends Controller
     /**
      * @route('editor')
      */
-    public function editor(){
+    public function editor()
+    {
+        return $this->fetch();
+    }
+
+    /**
+     * @route('boot')
+     */
+    public function boot()
+    {
         return $this->fetch();
     }
 }
