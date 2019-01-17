@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {load href="/static/plugin/mdeditor/css/editormd.css" /}
+</head>
+<body>
+
+<h1>EDITOR</h1>
+
+<div id="test-editormd">
+    <textarea style="display:none;"></textarea>
+</div>
+
+{load href="/static/js/jquery-3.3.1.min.js" /}
+{load href="/static/plugin/mdeditor/editormd.js" /}
+<script type="text/javascript">
+    var testEditor;
+    $(function () {
+        testEditor = editormd("test-editormd", {
+            width: "90%",
+            height: 640,
+            toolbarIcons: "simple",
+            path: "/static/plugin/mdeditor/lib/"
+        });
+        /*
+        // or
+        testEditor = editormd({
+            id      : "test-editormd",
+            width   : "90%",
+            height  : 640,
+            path    : "../lib/"
+        });
+        */
+    });
+</script>
+
+</body>
+</html>
