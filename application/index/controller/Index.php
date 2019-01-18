@@ -145,4 +145,12 @@ class Index extends Controller
     {
         return $this->fetch();
     }
+
+    /**
+     * @route('detail')
+     */
+    public function detail()
+    {
+        return $this->fetch();
+    }
 }
